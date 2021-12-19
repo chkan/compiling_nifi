@@ -1,1 +1,13 @@
-install wget,git,maven (download), java openjdk-devel, ca-certificates, zip
+#install wget,git,maven (download), java openjdk-devel, ca-certificates, zip
+
+wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+wget https://dlcdn.apache.org/nifi/1.15.1/nifi-1.15.1-source-release.zip
+sudo yum install wget
+sudo yum install git
+sudo yum install java-1.8.0-openjdk-devel.x86_64
+sudo yum install ca-certificates
+sudo yum install zip
+
+# set PATH for mvn
+mvn dependency:tree -DoutputFile=/home/ec2-user/maven_dependencies.txt -DoutputType=text -DappendOutput=true
+
